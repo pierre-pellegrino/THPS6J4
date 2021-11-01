@@ -1,6 +1,6 @@
 # Le Projet Potins
 
-[![Generic badge](https://img.shields.io/badge/<Apotre de>-<Boris>-<green>.svg)](https://shields.io/)
+[![Generic badge](https://https://img.shields.io/badge/Apotre%20de-Boris-green.svg)](https://shields.io/)
 
 
 ## Concept
