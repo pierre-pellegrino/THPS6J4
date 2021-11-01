@@ -1,0 +1,23 @@
+<nav>
+  <p><%= link_to "Accueil", index_path %></p>
+  <p><%= link_to "L'équipe", team_path %></p>
+  <p><%= link_to "Nous contacter", contact_path %></p>
+</nav>
+
+<h1><%=User.find_by(id: @id).first_name %> <%=User.find_by(id: @id).last_name %></h1>
+
+<div class="user-profile">
+  <p> Description (C'est du latin) :</p>
+  <p><%=User.find(@id).description%>
+
+  <p> Adresse email :</p>
+  <p><%=User.find(@id).email%>
+
+  <p> Ville :</p>
+  <p><%=User.find(@id).city.name%>
+
+  <p> Âge :</p>
+  <p><%=User.find(@id).age%> ans
+</div>
+
+<p> ça y est, tu sais tout, allez file j'en parlerai à personne 🤫</p>

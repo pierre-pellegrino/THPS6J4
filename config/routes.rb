@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/:id', to: 'user#show', as: :user
   get 'gossips/:id', to: 'gossip#show', as: :gossip
   get '/', to: 'index#show', as: :index
   get 'welcome/:name', to: 'welcome#show', as: :welcome

@@ -36,7 +36,7 @@ users_array = User.all
 
 # Création de 20 gossips
 20.times do |i|
-  chuckborisfact = Faker::ChuckNorris.fact.gsub('Chuck Norris', 'Boris')
+  chuckborisfact = Faker::ChuckNorris.fact.gsub('Chuck Norris', 'Chuck Boris')
   Gossip.create(
     title:"Potin n°#{i}",
     content:chuckborisfact,
