@@ -80,10 +80,11 @@ nav {
   padding: 16px;
   margin: 0 0 24px 0;
   background-color: #fff;
+  justify-content: center;
 }
 
 nav p {
-  margin: 0 8px;
+  margin: 0 16px;
   font-weight: 800;
 }
 
@@ -93,4 +94,73 @@ h1 {
 
 ul {
   list-style-type: none;
+  margin-top: 16px;
+}
+
+/* Contenu réutilisable */
+.rounded-card {
+  padding: 32px;
+  border: 1px solid rgba(0,0,0,0.2);
+  margin: 16px 0;
+  text-align: center;
+  width: 600px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  position: relative;
+}
+
+.rounded-card a {
+  font-size: 1.1em;
+  font-weight: bolder;
+}
+
+/* Index */
+.cards-wrapper {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gossip-card {
+  transition: box-shadow 0.3s;
+  -webkit-transition: box-shadow 0.3s;
+  -moz-transition: box-shadow 0.3s;
+  -ms-transition: box-shadow 0.3s;
+  -o-transition: box-shadow 0.3s;
+}
+
+.gossip-card:hover {
+  box-shadow: 0 0px 8px rgba(0,0,0,0.2);
+}
+
+
+
+/* Page Potin */
+.gossip-title {
+  font-size: 1.1em;
+  font-weight: bolder;
+  margin-bottom: 16px;
+}
+
+.gossip-date {
+  font-size: 0.8em;
+  margin-top: 16px;
+}
+
+/* Page User */
+.user-profile-title {
+  font-weight: bolder;
+}
+
+.user-profile-content:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+#file-gros-curieux {
+  font-size: 0.8em;
 }

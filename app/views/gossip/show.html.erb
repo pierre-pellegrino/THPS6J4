@@ -7,16 +7,16 @@
 <h1><%=Gossip.find_by(id: @id).title %></h1>
 <p>N'en parle à personne. 😉</p>
 
-<div class="gossip-author">
-  <p> Identité de la poucave : </p>
+<div class="gossip-author rounded-card">
+  <p> Identité de la ficanasse : </p>
   <p>
     <% user_name = "#{Gossip.find_by(id: @id).user.first_name} #{Gossip.find_by(id: @id).user.last_name}" %>
     <%= link_to user_name, user_path(Gossip.find_by(id: @id).user.id) %>
   </p>
 </div>
 
-<div class="gossip-content">
-  <p>Contenu du potin : </p>
+<div class="gossip-content rounded-card">
+  <p class="gossip-title">Contenu du potin : </p>
   <p><%=Gossip.find_by(id: @id).content %></p>
   <div class="gossip-date">
     <p>Date de création : </p>

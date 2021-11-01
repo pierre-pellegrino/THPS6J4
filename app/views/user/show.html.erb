@@ -6,18 +6,18 @@
 
 <h1><%=User.find_by(id: @id).first_name %> <%=User.find_by(id: @id).last_name %></h1>
 
-<div class="user-profile">
-  <p> Description (C'est du latin) :</p>
-  <p><%=User.find(@id).description%>
+<div class="user-profile rounded-card">
+  <p class="user-profile-title"> Description (C'est du latin) :</p>
+  <p class="user-profile-content"><%=User.find(@id).description%>
 
-  <p> Adresse email :</p>
-  <p><%=User.find(@id).email%>
+  <p class="user-profile-title"> Adresse email :</p>
+  <p class="user-profile-content"><%=User.find(@id).email%>
 
-  <p> Ville :</p>
-  <p><%=User.find(@id).city.name%>
+  <p class="user-profile-title"> Ville :</p>
+  <p class="user-profile-content"><%=User.find(@id).city.name%>
 
-  <p> Âge :</p>
-  <p><%=User.find(@id).age%> ans
+  <p class="user-profile-title"> Âge :</p>
+  <p class="user-profile-content"><%=User.find(@id).age%> ans
 </div>
 
-<p> ça y est, tu sais tout, allez file j'en parlerai à personne 🤫</p>
+<p> <span id="file-gros-curieux"> ça y est, tu sais tout, allez file j'en parlerai à personne</span> 🤫</p>

@@ -6,9 +6,11 @@
 <h1>Le projet potin</h1>
 <p>Garde ça pour toi 😳</p>
 
-<% Gossip.all.each do |i| %>
-<div class="gossip-card">
-  <p><%= link_to i.title, gossip_path(i.id) %></p>
-  <p><%= i.user.first_name %></p>
+<div class="cards-wrapper">
+  <% Gossip.all.each do |i| %>
+  <div class="rounded-card gossip-card">
+    <p><%= link_to i.title, gossip_path(i.id) %></p>
+    <p><%= i.user.first_name %></p>
+  </div>
+  <%end%>
 </div>
-<%end%>
