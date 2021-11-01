@@ -1,0 +1,14 @@
+<nav>
+  <p> <%= link_to "Accueil", index_path %></p>
+  <p><%= link_to "L'équipe", team_path %></p>
+  <p><%= link_to "Nous contacter", contact_path %></p>
+</nav>
+<h1>Le projet potin</h1>
+<p>Garde ça pour toi 😳</p>
+
+<% Gossip.all.each do |i| %>
+<div class="gossip-card">
+  <p><%= link_to i.title, gossip_path(i.id) %></p>
+  <p><%= i.user.first_name %></p>
+</div>
+<%end%>

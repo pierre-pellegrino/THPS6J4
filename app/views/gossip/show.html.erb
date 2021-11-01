@@ -1,0 +1,14 @@
+<nav>
+  <p><%= link_to "Accueil", index_path %></p>
+  <p><%= link_to "L'équipe", team_path %></p>
+  <p><%= link_to "Nous contacter", contact_path %></p>
+</nav>
+
+<h1><%=Gossip.find_by(id: @id).title %></h1>
+<p>N'en parle à personne. 😉</p>
+
+<div class="gossip-content">
+<p>Contenu du potin :</p>
+<p><%=Gossip.find_by(id: @id).content %></p>
+</div>
+
