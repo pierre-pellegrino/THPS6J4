@@ -1,0 +1,29 @@
+<% if flash[:edit_gossip_error] %>
+  <div class="alert alert-danger teknik-de-chlag" role="alert">
+    <% flash[:edit_gossip_error].each do |erreur| %>
+      <p><%= erreur %></p>
+    <%end%>
+  </div>
+<% end %>
+
+<h1>Édition du potin</h1>
+
+<div class="rounded-card">
+  <%= form_for @gossip do |f| %>
+
+    <div class="form-group">
+      <p> Titre </p>
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <p> Potin </p>
+      <%= f.text_field :content, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <button type="submit">Modifier le potin</button>
+    </div>
+
+  <% end %>
+</div>

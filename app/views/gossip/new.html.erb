@@ -1,0 +1,26 @@
+<h1> Crée ton potin </h1>
+
+<% if flash[:gossip_error] %>
+  <div class="alert alert-danger teknik-de-chlag" role="alert">
+  <%flash[:gossip_error].each do |erreur| %>
+    <p><%= erreur %></p>
+  <% end %>
+  </div>
+<% end %>
+
+<div class="gossip-form rounded-card">
+ <%= form_tag url_for(action: 'create'), method: "post" do %>
+
+    <%= label_tag 'Titre' %>
+    <%= text_field_tag 'title'%>
+
+    <%= label_tag 'Potin' %>
+    <%= text_area_tag 'content' %>
+
+    <%= label_tag 'Tag : ' %>
+    <%= select_tag(:tag, options_from_collection_for_select(Tag.all, "id", "title")) %>
+
+    <%= submit_tag "Créer le potin" %>
+
+  <% end %>
+</div>

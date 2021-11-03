@@ -1,6 +1,6 @@
 class Gossip < ApplicationRecord
   validates :title, presence: true
-  validates :content, presence: true, length: { minimum: 10, maximum: 900}
+  validates :content, presence: true, length: { minimum: 5, maximum: 900}
 
   belongs_to :user
   has_many :taggers

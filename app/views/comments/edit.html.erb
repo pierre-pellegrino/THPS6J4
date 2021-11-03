@@ -1,0 +1,24 @@
+<% if flash[:edit_comment_error] %>
+  <div class="alert alert-danger teknik-de-chlag" role="alert">
+    <% flash[:edit_comment_error].each do |erreur| %>
+      <p><%= erreur %></p>
+    <%end%>
+  </div>
+<% end %>
+
+<h1>Édition du commentaire</h1>
+
+<div class="rounded-card">
+  <%= form_for [@gossip, @comment] do |f| %>
+
+  <div class="form-group">
+    <p> Commentaire </p>
+    <%= f.text_field :content, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <button type="submit">Modifier le commentaire</button>
+  </div>
+
+  <% end %>
+</div>

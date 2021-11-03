@@ -1,0 +1,12 @@
+<h1> <%= City.find(@id).name %> </h1>
+
+<p> Voici les potins postés depuis <%= City.find(@id).name %>, ça balance fort 😱 </p>
+
+<% User.where(city: @id).each do |n| %>
+  <% n.gossips.each do |potin| %>
+    <div class="rounded-card gossip-card">
+      <p><%= link_to potin.title, gossip_path(potin.id) %></p>
+      <p><%= potin.user.first_name %></p>
+    </div>
+  <% end %>
+<% end %>

@@ -1,0 +1,20 @@
+  <% if flash[:gossip_success] %>
+    <div class="alert alert-success teknik-de-chlag" role="alert"><%= flash[:gossip_success] %></div>
+  <% end %>
+
+<h1>Le projet potin</h1>
+<p>Garde ça pour toi 😳</p>
+
+<div class="new-gossip-wrapper">
+    <p><%= link_to "Ajouter un potin", new_gossip_path %></p>
+</div>
+
+<div class="cards-wrapper">
+  <% Gossip.all.each do |i| %>
+  <div class="rounded-card gossip-card">
+    <p><%= Tagger.find_by(gossip:i.id).tag.title %></p>
+    <p><%= link_to i.title, gossip_path(i.id) %></p>
+    <p><%= i.user.first_name %></p>
+  </div>
+  <%end%>
+</div>

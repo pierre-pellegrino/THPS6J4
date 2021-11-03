@@ -1,9 +1,3 @@
-<nav>
-  <p><%= link_to "Accueil", index_path %></p>
-  <p><%= link_to "L'équipe", team_path %></p>
-  <p><%= link_to "Nous contacter", contact_path %></p>
-</nav>
-
 <h1><%=User.find_by(id: @id).first_name %> <%=User.find_by(id: @id).last_name %></h1>
 
 <div class="user-profile rounded-card">
@@ -14,7 +8,8 @@
   <p class="user-profile-content"><%=User.find(@id).email%>
 
   <p class="user-profile-title"> Ville :</p>
-  <p class="user-profile-content"><%=User.find(@id).city.name%>
+  <p class="user-profile-content"><%= link_to User.find(@id).city.name, city_path(User.find(@id).city.id) %></p>
+  
 
   <p class="user-profile-title"> Âge :</p>
   <p class="user-profile-content"><%=User.find(@id).age%> ans

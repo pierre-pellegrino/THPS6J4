@@ -1,8 +1,15 @@
-<nav>
-  <p><%= link_to "Accueil", index_path %></p>
-  <p><%= link_to "L'équipe", team_path %></p>
-  <p><%= link_to "Nous contacter", contact_path %></p>
-</nav>
+<% if flash[:edit_gossip_success] %>
+  <div class="alert alert-success teknik-de-chlag" role="alert"><%= flash[:edit_gossip_success] %></div>
+<% end %>
+
+<% if flash[:new_comment_success] %>
+  <div class="alert alert-success teknik-de-chlag" role="alert"><%= flash[:new_comment_success] %></div>
+<% end %>
+
+<% if flash[:edit_comment_success] %>
+  <div class="alert alert-success teknik-de-chlag" role="alert"><%= flash[:edit_comment_success] %></div>
+<% end %>
+
 
 <h1><%=Gossip.find_by(id: @id).title %></h1>
 <p>N'en parle à personne. 😉</p>
@@ -11,20 +18,42 @@
   <p> Identité de la ficanasse : </p>
   <p>
     <% user_name = "#{Gossip.find_by(id: @id).user.first_name} #{Gossip.find_by(id: @id).user.last_name}" %>
-    <%= link_to user_name, user_path(Gossip.find_by(id: @id).user.id) %>
+    <%= link_to user_name, user_path(Gossip.find_by(id: @id).user.id) %>    
   </p>
 </div>
 
 <div class="gossip-content rounded-card">
+  <p><%= Tagger.find_by(gossip:Gossip.find(@id).id).tag.title %></p>
   <p class="gossip-title">Contenu du potin : </p>
   <p><%=Gossip.find_by(id: @id).content %></p>
-  <div class="gossip-date">
-    <p>Date de création : </p>
-    <p>
+  <div class="gossip-user-city">
+    <p> Posté depuis <span class="city-name"><%= link_to Gossip.find_by(id: @id).user.city.name, city_path(Gossip.find_by(id: @id).user.city.id) %></span> </p>       
+    <p> Le
       <%=Gossip.find_by(id: @id).created_at.day %> /
       <%=Gossip.find_by(id: @id).created_at.month %> /
       <%=Gossip.find_by(id: @id).created_at.year %> 
     </p>
-  </div>
+    <p class="edit-gossip"> <%= link_to "Éditer le potin", edit_gossip_path %>
+    <p class="edit-gossip delete-gossip"> <%= link_to "Supprimer le potin", Gossip.find(@id), method: :delete, data: { confirm: "Êtes-vous sûr ?"} %>
+  </div>r
 </div>
 
+<div class="gossip-comments-wrapper rounded-card">
+  <p class="gossip-title">Commentaires (<%= Gossip.find(@id).comments.each.count %>) : </p>
+
+  <% Gossip.find(@id).comments.each do |comment| %>
+    <div class="gossip-comment">  
+    <p>
+      <%= link_to comment.user.first_name, user_path(comment.user.id) %> : <%=comment.content %> 
+      <span class="gossip-comment-edit"><%= link_to(raw("<i class=\"far fa-edit\"></i>"), edit_gossip_comment_path(@id, comment.id))%> </span>
+      <span class="gossip-comment-delete"><%= link_to(raw("<i class=\"fas fa-times\"></i>"), [Gossip.find(@id), Comment.find(comment.id)], method: :delete)%> </span>
+    </p>
+    <p class=gossip-comment-date> <%= comment.created_at.day %> / <%= comment.created_at.month %> / <%= comment.created_at.year %> </p>
+    </div>
+  <% end %>
+
+  <div class="new-gossip-wrapper">
+    <p><%= link_to "Lâcher un com", new_gossip_comment_path(Gossip.find(@id)) %></p>
+  </div>
+
+</div>

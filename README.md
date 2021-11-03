@@ -18,3 +18,8 @@ Le Projet Potins n'en est qu'à son premier stade, et te permet pour l'instant d
 En cliquant dessus, tu accèdes à leur contenu détaillé, ainsi qu'à leur auteur.
 
 Et si tu cliques sur l'auteur en question, tu peux voir toutes ses informations les plus privées. Le stalking n'a plus de limites. 😈
+
+
+## Crédits
+
+Avatars d'équipe : [Svgrepo](https://www.svgrepo.com)

@@ -1,0 +1,22 @@
+<% if flash[:new_comment_errors] %>
+  <div class="alert alert-danger teknik-de-chlag" role="alert">
+  <% flash[:new_comment_errors].each do |error| %>
+    <p> <%= error %> </p>
+  <% end %>
+  </div>
+<% end %>
+
+
+<h1>Lâcher un com</h1>
+<p><%= Gossip.find(@gossip_id).content %></p>
+
+<div class="gossip-form comment-form rounded-card">
+ <%= form_tag url_for(action: 'create'), method: "post" do %>
+
+    <%= label_tag 'Commentaire' %>
+    <%= text_area_tag 'content' %>
+
+    <%= submit_tag "Envoyer" %>
+
+  <% end %>
+</div>

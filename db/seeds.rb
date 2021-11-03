@@ -32,6 +32,7 @@ cities_array = City.all
     city:cities_array[rand(0..9)]
   )
 end
+User.create(first_name:"anonymous", last_name:"anonymous",description:"utilisateur test",email:"anonymous@gmail.com",age:"20",city:cities_array.first)
 users_array = User.all
 
 # Création de 20 gossips
@@ -46,22 +47,26 @@ end
 gossips_array = Gossip.all
 
 # Création de 10 tags
-10.times do
-  Tag.create(
-    title: Faker::SlackEmoji.unique.people
-  )
+# 10.times do
+#   Tag.create(
+#     title: Faker::SlackEmoji.unique.people
+#   )
+# end
+emojis_array = ["😘", "😥", "😮", "😎", "😭", "😂", "🤮", "😳", "😱", "🤯"]
+10.times do |i|
+  Tag.create(title:emojis_array[i])
 end
 tags_array = Tag.all
 
 # Création des Taggers, qui associent les messages à leurs tags respectifs 
 Gossip.all.each do |each_gossip|
-  random_times = rand(1..2)
-  random_times.times do 
+  # random_times = rand(1..2)
+  # random_times.times do 
     Tagger.create(
       gossip: each_gossip,
       tag: tags_array[rand(0...tags_array.length)]
     )
-  end
+  # end
 end
 
 # Création de messages privés
@@ -84,13 +89,14 @@ end
 comments_array = Comment.all
 
 # Création de 10 commentaires sur les commentaires #polymorphismception
-10.times do 
-  Comment.create(
-    content: Faker::Quotes::Chiquito.expression,
-    commentable: comments_array[rand(0...comments_array.length)],
-    user: users_array[rand(0...users_array.length)]
-  )
-end
+
+# 10.times do 
+#   Comment.create(
+#     content: Faker::Quotes::Chiquito.expression,
+#     commentable: comments_array[rand(0...comments_array.length)],
+#     user: users_array[rand(0...users_array.length)]
+#   )
+# end
 
 # Création de 20 likes, aléatoirement sur des Gossip ou des Comment
 20.times do
