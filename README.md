@@ -14,10 +14,33 @@ Le pouvoir est entre tes mains.
 
 ## Features
 
-Le Projet Potins n'en est qu'à son premier stade, et te permet pour l'instant de voir la liste des potins.
-En cliquant dessus, tu accèdes à leur contenu détaillé, ainsi qu'à leur auteur.
+#### Accède à la liste des potins.
+- En cliquant sur un potin, tu accèdes à son contenu détaillé, ainsi qu'à son auteur.
 
-Et si tu cliques sur l'auteur en question, tu peux voir toutes ses informations les plus privées. Le stalking n'a plus de limites. 😈
+#### Crée ton propre potin.
+- Choisis lui un titre
+- Renseigne son contenu
+- Assigne lui un tag
+
+#### Modifie ou supprime ton potin.
+- Tu ne l'assumes plus ? On menace de te briser les dents de devant ? Supprime ou change ton potin. 🤫
+
+#### Commente les potins.
+- Écris ce que tu penses de ce que les gens balancent. Les ragots n'ont plus aucune limite.
+
+#### Modifie ou supprime tes commentaires.
+- Pour les mêmes raisons que celles évoquées ci-dessus, si ta vie est en péril, modifie ton commentaire et prétends que c'est Natacha qui a dit ça et pas toi.
+
+#### La vie en emojis.
+- Tu peux assigner à ton potin un petit emoji pour montrer à tout le monde ton humeur. La classe.
+
+
+#### Un peu, beaucoup, trop d'infos.
+- Tu peux cliquer sur un auteur pour accéder à toutes ses informations les plus privées.
+- Tu as le détail des villes et des ragots qui y ont circulé.
+
+
+Le stalking n'a plus de limites. 😈
 
 
 ## Crédits
