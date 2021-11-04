@@ -2,6 +2,10 @@
   <div class="alert alert-danger teknik-de-chlag" role="alert"><%= flash[:connection_error] %></div>
 <% end %>
 
+<% if flash[:connection_needed] %>
+  <div class="alert alert-danger teknik-de-chlag" role="alert"><%= flash[:connection_needed] %></div>
+<% end %>
+
 <h1>Connexion</h1>
 
 <div class="gossip-form rounded-card">

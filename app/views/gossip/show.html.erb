@@ -33,8 +33,11 @@
       <%=Gossip.find_by(id: @id).created_at.month %> /
       <%=Gossip.find_by(id: @id).created_at.year %> 
     </p>
+    <%# \/ Vérifie si l'utilisateur est l'auteur du potin pour permettre sa modification %>
+    <%if current_user == Gossip.find(@id).user %>
     <p class="edit-gossip"> <%= link_to "Éditer le potin", edit_gossip_path %>
-    <p class="edit-gossip delete-gossip"> <%= link_to "Supprimer le potin", Gossip.find(@id), method: :delete, data: { confirm: "Êtes-vous sûr ?"} %>
+    <p class="edit-gossip delete-gossip"> <%= link_to "Supprimer le potin", Gossip.find(@id), method: :delete %>
+    <%end%>
   </div>
 </div>
 
@@ -45,8 +48,11 @@
     <div class="gossip-comment">  
     <p>
       <%= link_to comment.user.first_name, user_path(comment.user.id) %> : <%=comment.content %> 
+      <%# \/ Vérifie si l'utilisateur est l'auteur du commentaire pour permettre sa modification %>
+      <% if current_user == comment.user%>
       <span class="gossip-comment-edit"><%= link_to(raw("<i class=\"far fa-edit\"></i>"), edit_gossip_comment_path(@id, comment.id))%> </span>
       <span class="gossip-comment-delete"><%= link_to(raw("<i class=\"fas fa-times\"></i>"), [Gossip.find(@id), Comment.find(comment.id)], method: :delete)%> </span>
+      <%end%>
     </p>
     <p class=gossip-comment-date> <%= comment.created_at.day %> / <%= comment.created_at.month %> / <%= comment.created_at.year %> </p>
     </div>

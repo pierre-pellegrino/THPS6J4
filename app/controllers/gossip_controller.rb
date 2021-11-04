@@ -1,4 +1,7 @@
 class GossipController < ApplicationController
+  before_action :authenticate_user, only: [:new, :create]
+  before_action :is_author?, only: [:destroy, :edit]
+
   def show
     @id = params[:id].to_i
   end
@@ -15,7 +18,7 @@ class GossipController < ApplicationController
 
 
   def create
-    @gossip = Gossip.new(title: params[:title], content: params[:content], user: User.find_by(first_name:"anonymous")) # avec xxx qui sont les données obtenues à partir du formulaire
+    @gossip = Gossip.new(title: params[:title], content: params[:content], user: current_user) # avec xxx qui sont les données obtenues à partir du formulaire
     @tag = Tagger.new(gossip:@gossip, tag:Tag.find(params[:tag]))
 
     if @gossip.save # essaie de sauvegarder en base @gossip
@@ -59,6 +62,23 @@ class GossipController < ApplicationController
     @gossip = Gossip.find(params[:id])
     @gossip.destroy
     redirect_to gossip_index_path
+  end
+
+
+
+  private
+
+  def authenticate_user
+    unless current_user
+      flash[:connection_needed] = "Connectez-vous pour accéder à ce contenu."
+      redirect_to new_session_path
+    end
+  end
+
+  def is_author?
+    unless current_user == Gossip.find(params[:id]).user
+      redirect_to gossip_index_path
+    end
   end
   
 end
