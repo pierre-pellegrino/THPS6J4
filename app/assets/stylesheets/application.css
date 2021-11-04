@@ -278,6 +278,7 @@ a, a:hover {
 .gossip-comment-edit, .gossip-comment-delete {
   cursor: pointer;
   position: absolute;
+  top: 0;
   right: -12px;
   opacity: 0;
   transition: opacity 0.1s;

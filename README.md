@@ -58,3 +58,4 @@ Le stalking n'a plus de limites. 😈
 ## Crédits
 
 Avatars d'équipe : [Svgrepo](https://www.svgrepo.com)
+Favicon / Navbar icon : [Icons8](https://icons8.com/icon/63699/skull-crossbones)
