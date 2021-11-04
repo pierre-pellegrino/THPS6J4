@@ -4,6 +4,7 @@ class GossipController < ApplicationController
 
   def show
     @id = params[:id].to_i
+    @gossip = Gossip.find(@id)
   end
 
 

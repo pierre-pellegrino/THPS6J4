@@ -41,6 +41,19 @@
   </div>
 </div>
 
+<p class="like-display">
+  <% isLiked = false %>
+  <% @gossip.likes.each do |like| %>
+    <% like.user == current_user ? isLiked = true : nil %>
+  <% end%>
+  <% if isLiked %>
+    <%= link_to(raw("<i class=\"fas fa-heart like-btn\"></i>"), [@gossip, Like.find_by(likeable: @gossip, user: current_user)], method: :delete) %>
+  <% else %>
+    <%= link_to(raw("<i class=\"far fa-heart like-btn\"></i>"), new_gossip_like_path(@id)) %>
+  <% end %>
+  <span class="like-btn"> <%= @gossip.likes.count %> </span>
+</p>
+
 <div class="gossip-comments-wrapper rounded-card">
   <p class="gossip-title">Commentaires (<%= Gossip.find(@id).comments.each.count %>) : </p>
 

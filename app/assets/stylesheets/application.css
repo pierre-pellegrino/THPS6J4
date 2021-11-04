@@ -111,14 +111,19 @@ nav p {
   -moz-transition: background-color 0.3s;
   -ms-transition: background-color 0.3s;
   -o-transition: background-color 0.3s;
-}
-
-.sign-up-btn:hover {
   background-color: #413c58;
 }
 
-.sign-up-btn:hover a {
+.sign-up-btn:hover {
+  background-color: white;
+}
+
+.sign-up-btn a {
   color: white;
+}
+
+.sign-up-btn:hover a {
+  color: #413c58;
 }
 
 .sign-up-btn:hover a:before {
@@ -377,4 +382,47 @@ a, a:hover {
 .team-profile img{
  width: 50px;
  margin: 0 0 6px 0;
+}
+
+/* Likes */
+.like-btn {
+  color: #f03a47;
+  font-size: 1.2em;
+}
+
+.like-btn:active {
+ animation: grow 0.2s linear forwards;
+ -webkit-animation: grow 0.4s linear forwards;
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(1)  ;
+    -webkit-transform: scale(1)  ;
+    -moz-transform: scale(1)  ;
+    -ms-transform: scale(1)  ;
+    -o-transform: scale(1)  ;
+  }
+  50% {
+    transform: scale(1.2)  ;
+    -webkit-transform: scale(1.2)  ;
+    -moz-transform: scale(1.2)  ;
+    -ms-transform: scale(1.2)  ;
+    -o-transform: scale(1.2)  ;
+}
+  100% {
+    transform: scale(1)  ;
+    -webkit-transform: scale(1)  ;
+    -moz-transform: scale(1)  ;
+    -ms-transform: scale(1)  ;
+    -o-transform: scale(1)  ;
+  }
+}
+
+.like-display a:before {
+  display: none;
+}
+
+span.like-btn {
+  font-weight: bolder;
 }

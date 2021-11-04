@@ -16,5 +16,6 @@ Rails.application.routes.draw do
 
   resources :gossip do
     resources :comments
+    resources :likes, only: [:new, :destroy]
   end
 end
