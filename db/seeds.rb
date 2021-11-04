@@ -29,7 +29,8 @@ cities_array = City.all
     description: Faker::Lorem.sentence(word_count: 4),
     email: "#{rand_fname}.#{rand_lname}@mail.com",
     age: rand(18..77),
-    city:cities_array[rand(0..9)]
+    city:cities_array[rand(0..9)],
+    password: Faker::Lorem.characters(number: 8)
   )
 end
 User.create(first_name:"anonymous", last_name:"anonymous",description:"utilisateur test",email:"anonymous@gmail.com",age:"20",city:cities_array.first)

@@ -1,0 +1,19 @@
+<% if flash[:connection_error] %>
+  <div class="alert alert-danger teknik-de-chlag" role="alert"><%= flash[:connection_error] %></div>
+<% end %>
+
+<h1>Connexion</h1>
+
+<div class="gossip-form rounded-card">
+ <%= form_tag url_for(action: 'create'), method: "post" do %>
+
+    <%= label_tag 'Adresse e-mail' %>
+    <%= text_field_tag 'email'%>
+
+    <%= label_tag 'Mot de passe' %>
+    <%= password_field_tag 'password' %>
+
+    <%= submit_tag "Se connecter" %>
+
+  <% end %>
+</div>

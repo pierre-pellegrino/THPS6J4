@@ -15,9 +15,21 @@
 
   <body>
   <nav>
-    <p><%= link_to "Accueil", index_path %></p>
-    <p><%= link_to "L'équipe", team_index_path %></p>
-    <p><%= link_to "Nous contacter", contact_index_path %></p>
+    <div class="navigation-div">
+      <p><%= link_to "Accueil", index_path %></p>
+      <p><%= link_to "L'équipe", team_index_path %></p>
+      <p><%= link_to "Nous contacter", contact_index_path %></p>
+    </div>
+
+    <div class="sign-up-div">
+    <% if !logged_in?() %>
+      <p class="sign-up-btn"><%= link_to "Inscription", new_user_path %></p>
+      <p><%= link_to "Connexion", new_session_path %></p>
+    </div>
+    <% else %>
+      <p> Bonjour, <%= current_user.first_name %> </p>
+      <p> <%= link_to "Se déconnecter", session_path(session.id), method: :delete %> </p>
+    <% end %>
   </nav>
     <%= yield %>
     

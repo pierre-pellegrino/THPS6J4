@@ -1,0 +1,39 @@
+<% if flash[:new_user_errors] %>
+  <div class="alert alert-danger teknik-de-chlag" role="alert">
+  <% flash[:new_user_errors].each do |error| %>
+    <p> <%= error %> </p>
+  <% end %>
+  </div>
+<% end %>
+
+<h1> Création de compte </h1>
+
+<div class="gossip-form rounded-card">
+ <%= form_tag url_for(action: 'create'), method: "post" do %>
+
+    <%= label_tag 'Adresse e-mail' %>
+    <%= text_field_tag 'email'%>
+
+    <%= label_tag 'Mot de passe' %>
+    <%= password_field_tag 'password' %>
+
+    <%= label_tag 'Prénom' %>
+    <%= text_field_tag 'first_name'%>
+
+    <%= label_tag 'Nom de famille' %>
+    <%= text_field_tag 'last_name'%>
+
+    <%= label_tag 'Âge' %>
+    <%= text_field_tag 'age'%>
+
+    <%= label_tag 'Description' %>
+    <%= text_area_tag 'description', "Je suis..." %>
+
+    <%= label_tag 'Ville' %>
+    <%= select_tag(:city, options_from_collection_for_select(City.all, "id", "name")) %>
+
+
+    <%= submit_tag "Créer un compte" %>
+
+  <% end %>
+</div>
