@@ -333,7 +333,7 @@ a, a:hover {
   background-color: #444;
 }
 
-.gossip-form input, .gossip-form textarea {
+.gossip-form input, .gossip-form textarea, select {
   display: block;
   width: 300px;
   outline: none;
@@ -346,6 +346,11 @@ a, a:hover {
   -o-border-radius: 6px;
   border: 1px solid rgba(0,0,0,0.2);
   padding:  6px;
+}
+
+.gossip-form select {
+  width: auto;
+  margin: auto;
 }
 
 /* Attention ghetto : Animation pour faire disparaître les messages flash vu que je n'y arrive pas en Ruby */
@@ -425,4 +430,35 @@ a, a:hover {
 
 span.like-btn {
   font-weight: bolder;
+}
+
+/* ----- Responsive, la partie la plus drôle tu connais ----- */
+@media screen and (max-width: 740px) {
+  nav {
+    padding: 16px 8px;
+  }
+
+  nav p {
+    margin: 0 8px;
+  }
+
+}
+
+@media screen and (max-width: 650px) {
+  .cards-wrapper {
+    width: 100%;
+  }
+  .rounded-card {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .navigation-div {
+    flex-direction: column;
+  }
+
+  .sign-up-div {
+    flex-direction: column;
+  }
 }

@@ -17,7 +17,7 @@
     <%= label_tag 'Potin' %>
     <%= text_area_tag 'content' %>
 
-    <%= label_tag 'Tag : ' %>
+    <%= label_tag 'Tag' %>
     <%= select_tag(:tag, options_from_collection_for_select(Tag.all, "id", "title")) %>
 
     <%= submit_tag "Créer le potin" %>
