@@ -12,8 +12,9 @@ Faker::Config.locale="fr"
 
 # Création de 10 villes
 cities_list = ["Nice", "Paris", "Marseille", "Reims", "Bordeaux", "Antibes", "Toulouse", "Lille", "Nantes", "Autre"]
-10.times do
+10.times do |i|
   City.create(
+    name: cities_list[i],
     # name:Faker::Address.city, 
     zip_code:"#{'%02d' % rand(00..77)}000"
   )
