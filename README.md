@@ -1,4 +1,5 @@
 # Le Projet Potins
+[Disponible ici](https://projet-potin.herokuapp.com/)
 
 
 ## Concept
@@ -39,6 +40,19 @@ Le pouvoir est entre tes mains.
 
 
 Le stalking n'a plus de limites. 😈
+
+
+## Mise à jour v3
+
+
+#### Login
+- Tu veux poster ton potin ? Liker ? Commenter ? Crée un compte, et c'est parti !
+- Avoir ton compte te permet de modifier tes potins et tes commentaires.
+
+
+#### Montre ton amour
+- En cliquant sur le coeur, tu peux liker un Gossip ! Fais exploser le compteur de coeurs de tes gossips préférés.
+
 
 
 ## Crédits
