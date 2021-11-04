@@ -14,7 +14,7 @@
 </div>
 
 <div class="cards-wrapper">
-  <% Gossip.all.each do |i| %>
+  <% Gossip.all.order("created_at DESC").each do |i| %>
   <div class="rounded-card gossip-card">
     <p><%= Tagger.find_by(gossip:i.id).tag.title %></p>
     <p><%= link_to i.title, gossip_path(i.id) %></p>

@@ -57,7 +57,7 @@
 <div class="gossip-comments-wrapper rounded-card">
   <p class="gossip-title">Commentaires (<%= Gossip.find(@id).comments.each.count %>) : </p>
 
-  <% Gossip.find(@id).comments.each do |comment| %>
+  <% Gossip.find(@id).comments.order("created_at DESC").each do |comment| %>
     <div class="gossip-comment">  
     <p>
       <%= link_to comment.user.first_name, user_path(comment.user.id) %> : <%=comment.content %> 
