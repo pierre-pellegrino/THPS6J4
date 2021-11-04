@@ -21,7 +21,8 @@ class UsersController < ApplicationController
     )
     # /\ Sera modifié plus tard pour intégrer un login
     if @user.save
-      flash[:new_user_success] = "Votre compte a bien été créé. Vous pouvez vous connecter."
+      flash[:new_user_success] = "Votre compte a bien été créé."
+      session[:user_id] = @user.id
       redirect_to gossip_index_path
     else
       errors = []
